@@ -1,0 +1,34 @@
+export type OverlayValueType = "text" | "multiline" | "checkbox" | "signature";
+
+export interface BaseOverlayField {
+  key: string;
+  page: number;
+  type: OverlayValueType;
+  x: number;
+  y: number;
+  width?: number;
+  height?: number;
+}
+
+export interface TextOverlayField extends BaseOverlayField {
+  type: "text" | "multiline";
+  fontSize: number;
+  minFontSize?: number;
+  maxLines?: number;
+  align?: "left" | "center" | "right";
+  overflow?: "truncate" | "addendum";
+  lineHeight?: number;
+}
+
+export interface CheckboxOverlayField extends BaseOverlayField {
+  type: "checkbox";
+  checkedStyle: "x";
+  fontSize: number;
+}
+
+export interface SignatureOverlayField extends BaseOverlayField {
+  type: "signature";
+  preserveAspectRatio?: boolean;
+}
+
+export type OverlayField = TextOverlayField | CheckboxOverlayField | SignatureOverlayField;
