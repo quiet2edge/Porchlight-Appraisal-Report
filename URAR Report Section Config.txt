@@ -1,0 +1,38 @@
+export const urarTemplate = {
+  id: "urar_1004_2005",
+  name: "Uniform Residential Appraisal Report",
+  version: "2005",
+  pdfAssetPath: "/templates/urar-sample-form.pdf",
+  supportsPhotoAddendum: true,
+  supportsSignature: true,
+  fields: [
+    {
+      key: "subject.propertyAddress",
+      label: "Property Address",
+      section: "subject",
+      type: "text",
+      pdfFieldName: "PropertyAddress",
+    },
+    {
+      key: "subject.city",
+      label: "City",
+      section: "subject",
+      type: "text",
+      pdfFieldName: "City",
+    },
+    {
+      key: "subject.state",
+      label: "State",
+      section: "subject",
+      type: "text",
+      pdfFieldName: "State",
+    },
+    {
+      key: "subject.zip",
+      label: "Zip Code",
+      section: "subject",
+      type: "text",
+      pdfFieldName: "ZipCode",
+    },
+  ],
+};

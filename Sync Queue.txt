@@ -1,0 +1,16 @@
+export interface SyncQueueItem {
+  id: string;
+  jobId: string;
+  action:
+    | "create_job"
+    | "update_job"
+    | "upload_photo"
+    | "upload_signature"
+    | "generate_pdf"
+    | "send_email";
+  payload: Record<string, unknown>;
+  status: "queued" | "processing" | "done" | "error";
+  attempts: number;
+  createdAt: string;
+  updatedAt: string;
+}

@@ -1,0 +1,29 @@
+export type FieldType =
+  | "text"
+  | "textarea"
+  | "number"
+  | "currency"
+  | "date"
+  | "checkbox"
+  | "radio"
+  | "signature";
+
+export interface TemplateField {
+  key: string;
+  label: string;
+  section: string;
+  type: FieldType;
+  pdfFieldName?: string;
+  required?: boolean;
+  defaultValue?: string | boolean | number | null;
+}
+
+export interface ReportTemplate {
+  id: string;
+  name: string;
+  version: string;
+  pdfAssetPath: string;
+  fields: TemplateField[];
+  supportsPhotoAddendum: boolean;
+  supportsSignature: boolean;
+}

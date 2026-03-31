@@ -1,0 +1,47 @@
+{
+  key: "subject.propertyAddress",
+  page: 1,
+  type: "text",
+  x: 24,
+  y: 62,
+  width: 150,
+  height: 12,
+  fontSize: 8,
+  minFontSize: 6,
+  overflow: "truncate"
+}
+
+
+{
+  key: "neighborhood.marketConditions",
+  page: 1,
+  type: "multiline",
+  x: 24,
+  y: 318,
+  width: 520,
+  height: 44,
+  fontSize: 8,
+  minFontSize: 6,
+  overflow: "addendum"
+}
+
+{
+  key: "site.femaSpecialFloodHazardArea",
+  page: 1,
+  type: "checkbox",
+  style: "x",
+  truePosition: { x: 112, y: 430 },
+  falsePosition: { x: 148, y: 430 }
+}
+
+
+{
+  key: "appraiser.signatureImage",
+  page: 6,
+  type: "signature",
+  x: 80,
+  y: 518,
+  width: 145,
+  height: 24
+}
+

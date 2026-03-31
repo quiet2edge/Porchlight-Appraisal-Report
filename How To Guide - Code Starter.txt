@@ -1,0 +1,14 @@
+// example usage
+
+const overlayResult = await renderUrarOverlay({
+  templateBytes,
+  values,
+  signaturePngBytes,
+});
+
+const finalPdfBytes = await appendOverflowAddendum({
+  pdfBytes: overlayResult.pdfBytes,
+  propertyAddress: String(values["subject.propertyAddress"] ?? ""),
+  clientName: String(values["subject.borrower"] ?? ""),
+  overflowItems: overlayResult.addendumOverflow,
+});

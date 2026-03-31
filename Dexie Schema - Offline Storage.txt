@@ -1,0 +1,30 @@
+import Dexie, { Table } from "dexie";
+import {
+  JobRecord,
+  JobFieldValue,
+  JobPhoto,
+  JobSignature,
+  SyncQueueItem,
+} from "@/types";
+
+export class AppraisalDB extends Dexie {
+  jobs!: Table<JobRecord, string>;
+  fieldValues!: Table<JobFieldValue, string>;
+  photos!: Table<JobPhoto, string>;
+  signatures!: Table<JobSignature, string>;
+  syncQueue!: Table<SyncQueueItem, string>;
+
+  constructor() {
+    super("AppraisalFieldToolDB");
+
+    this.version(1).stores({
+      jobs: "id, templateId, status, syncStatus, updatedAt",
+      fieldValues: "id, jobId, fieldKey, updatedAt",
+      photos: "id, jobId, order, createdAt",
+      signatures: "id, jobId, createdAt",
+      syncQueue: "id, jobId, action, status, createdAt",
+    });
+  }
+}
+
+export const db = new AppraisalDB();

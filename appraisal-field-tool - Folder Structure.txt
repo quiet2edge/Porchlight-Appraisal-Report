@@ -1,0 +1,64 @@
+appraisal-field-tool/
+├─ public/
+│  ├─ manifest.json
+│  ├─ icons/
+│  └─ templates/
+│     └─ urar-sample-form.pdf
+├─ src/
+│  ├─ app/
+│  │  ├─ layout.tsx
+│  │  ├─ page.tsx
+│  │  ├─ login/page.tsx
+│  │  ├─ dashboard/page.tsx
+│  │  ├─ jobs/
+│  │  │  ├─ new/page.tsx
+│  │  │  └─ [jobId]/
+│  │  │     ├─ page.tsx
+│  │  │     ├─ subject/page.tsx
+│  │  │     ├─ neighborhood/page.tsx
+│  │  │     ├─ site/page.tsx
+│  │  │     ├─ improvements/page.tsx
+│  │  │     ├─ sales/page.tsx
+│  │  │     ├─ comments/page.tsx
+│  │  │     ├─ photos/page.tsx
+│  │  │     ├─ signature/page.tsx
+│  │  │     └─ review/page.tsx
+│  ├─ components/
+│  │  ├─ forms/
+│  │  ├─ photos/
+│  │  ├─ signature/
+│  │  ├─ layout/
+│  │  └─ ui/
+│  ├─ lib/
+│  │  ├─ db/
+│  │  │  ├─ dexie.ts
+│  │  │  ├─ schema.ts
+│  │  │  └─ repositories/
+│  │  ├─ templates/
+│  │  │  ├─ template-types.ts
+│  │  │  ├─ urar-template.ts
+│  │  │  └─ field-maps/
+│  │  ├─ pdf/
+│  │  │  ├─ fill-pdf.ts
+│  │  │  ├─ add-photo-addendum.ts
+│  │  │  └─ build-report.ts
+│  │  ├─ sync/
+│  │  │  ├─ queue.ts
+│  │  │  ├─ sync-engine.ts
+│  │  │  └─ connectivity.ts
+│  │  ├─ auth/
+│  │  │  └─ session.ts
+│  │  └─ utils/
+│  ├─ store/
+│  │  ├─ app-store.ts
+│  │  ├─ job-store.ts
+│  │  └─ sync-store.ts
+│  ├─ types/
+│  │  ├─ job.ts
+│  │  ├─ template.ts
+│  │  └─ photo.ts
+│  └─ styles/
+├─ supabase/
+│  └─ (later)
+├─ package.json
+└─ tsconfig.json

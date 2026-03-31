@@ -1,0 +1,333 @@
+// src/lib/templates/urar-fields.ts
+
+export type UrarFieldType =
+  | "text"
+  | "textarea"
+  | "multiline-overflow"
+  | "currency"
+  | "number"
+  | "date"
+  | "checkbox"
+  | "radio"
+  | "signature";
+
+export interface UrarFieldDef {
+  key: string;
+  label: string;
+  type: UrarFieldType;
+  page?: number;
+  section: string;
+}
+
+export const urarFields: UrarFieldDef[] = [
+  // Page 1 — Subject
+  { key: "subject.fileNumber", label: "File Number", type: "text", page: 1, section: "subject" },
+  { key: "subject.propertyAddress", label: "Property Address", type: "text", page: 1, section: "subject" },
+  { key: "subject.city", label: "City", type: "text", page: 1, section: "subject" },
+  { key: "subject.state", label: "State", type: "text", page: 1, section: "subject" },
+  { key: "subject.zip", label: "Zip", type: "text", page: 1, section: "subject" },
+  { key: "subject.borrower", label: "Borrower", type: "text", page: 1, section: "subject" },
+  { key: "subject.ownerOfRecord", label: "Owner of Record", type: "text", page: 1, section: "subject" },
+  { key: "subject.county", label: "County", type: "text", page: 1, section: "subject" },
+  { key: "subject.legalDescription", label: "Legal Description", type: "textarea", page: 1, section: "subject" },
+  { key: "subject.assessorsParcelNumber", label: "Assessor Parcel Number", type: "text", page: 1, section: "subject" },
+  { key: "subject.taxYear", label: "Tax Year", type: "text", page: 1, section: "subject" },
+  { key: "subject.reTaxes", label: "RE Taxes", type: "currency", page: 1, section: "subject" },
+  { key: "subject.neighborhoodName", label: "Neighborhood Name", type: "text", page: 1, section: "subject" },
+  { key: "subject.mapReference", label: "Map Reference", type: "text", page: 1, section: "subject" },
+  { key: "subject.censusTract", label: "Census Tract", type: "text", page: 1, section: "subject" },
+
+  { key: "subject.occupancy.owner", label: "Occupancy Owner", type: "checkbox", page: 1, section: "subject" },
+  { key: "subject.occupancy.tenant", label: "Occupancy Tenant", type: "checkbox", page: 1, section: "subject" },
+  { key: "subject.occupancy.vacant", label: "Occupancy Vacant", type: "checkbox", page: 1, section: "subject" },
+
+  { key: "subject.specialAssessments", label: "Special Assessments", type: "currency", page: 1, section: "subject" },
+  { key: "subject.pud", label: "PUD", type: "checkbox", page: 1, section: "subject" },
+  { key: "subject.hoaAmount", label: "HOA Amount", type: "currency", page: 1, section: "subject" },
+  { key: "subject.hoaPeriod.year", label: "HOA Per Year", type: "checkbox", page: 1, section: "subject" },
+  { key: "subject.hoaPeriod.month", label: "HOA Per Month", type: "checkbox", page: 1, section: "subject" },
+
+  { key: "subject.propertyRightsAppraised.feeSimple", label: "Fee Simple", type: "checkbox", page: 1, section: "subject" },
+  { key: "subject.propertyRightsAppraised.leasehold", label: "Leasehold", type: "checkbox", page: 1, section: "subject" },
+  { key: "subject.propertyRightsAppraised.other", label: "Other Property Rights", type: "text", page: 1, section: "subject" },
+
+  { key: "subject.assignmentType.purchase", label: "Purchase Transaction", type: "checkbox", page: 1, section: "subject" },
+  { key: "subject.assignmentType.refinance", label: "Refinance Transaction", type: "checkbox", page: 1, section: "subject" },
+  { key: "subject.assignmentType.other", label: "Other Assignment", type: "text", page: 1, section: "subject" },
+
+  { key: "subject.lenderClient", label: "Lender Client", type: "text", page: 1, section: "subject" },
+  { key: "subject.lenderClientAddress", label: "Lender Client Address", type: "text", page: 1, section: "subject" },
+
+  { key: "subject.offeredForSale.yes", label: "Offered For Sale Yes", type: "checkbox", page: 1, section: "subject" },
+  { key: "subject.offeredForSale.no", label: "Offered For Sale No", type: "checkbox", page: 1, section: "subject" },
+  { key: "subject.reportDataSources", label: "Report Data Sources", type: "textarea", page: 1, section: "subject" },
+
+  // Contract
+  { key: "contract.analyzed", label: "Analyzed Contract", type: "checkbox", page: 1, section: "contract" },
+  { key: "contract.notAnalyzed", label: "Did Not Analyze Contract", type: "checkbox", page: 1, section: "contract" },
+  { key: "contract.analysisExplanation", label: "Contract Analysis Explanation", type: "textarea", page: 1, section: "contract" },
+  { key: "contract.price", label: "Contract Price", type: "currency", page: 1, section: "contract" },
+  { key: "contract.date", label: "Date of Contract", type: "date", page: 1, section: "contract" },
+  { key: "contract.sellerIsOwner.yes", label: "Seller Owner Yes", type: "checkbox", page: 1, section: "contract" },
+  { key: "contract.sellerIsOwner.no", label: "Seller Owner No", type: "checkbox", page: 1, section: "contract" },
+  { key: "contract.dataSources", label: "Contract Data Sources", type: "text", page: 1, section: "contract" },
+  { key: "contract.financialAssistance.yes", label: "Financial Assistance Yes", type: "checkbox", page: 1, section: "contract" },
+  { key: "contract.financialAssistance.no", label: "Financial Assistance No", type: "checkbox", page: 1, section: "contract" },
+  { key: "contract.financialAssistanceDescription", label: "Financial Assistance Description", type: "textarea", page: 1, section: "contract" },
+
+  // Neighborhood
+  { key: "neighborhood.location.urban", label: "Urban", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.location.suburban", label: "Suburban", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.location.rural", label: "Rural", type: "checkbox", page: 1, section: "neighborhood" },
+
+  { key: "neighborhood.builtUp.over75", label: "Built Up Over 75", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.builtUp.from25To75", label: "Built Up 25 to 75", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.builtUp.under25", label: "Built Up Under 25", type: "checkbox", page: 1, section: "neighborhood" },
+
+  { key: "neighborhood.growth.rapid", label: "Growth Rapid", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.growth.stable", label: "Growth Stable", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.growth.slow", label: "Growth Slow", type: "checkbox", page: 1, section: "neighborhood" },
+
+  { key: "neighborhood.propertyValues.increasing", label: "Values Increasing", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.propertyValues.stable", label: "Values Stable", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.propertyValues.declining", label: "Values Declining", type: "checkbox", page: 1, section: "neighborhood" },
+
+  { key: "neighborhood.demandSupply.shortage", label: "Demand Shortage", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.demandSupply.inBalance", label: "Demand In Balance", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.demandSupply.overSupply", label: "Demand Over Supply", type: "checkbox", page: 1, section: "neighborhood" },
+
+  { key: "neighborhood.marketingTime.under3Months", label: "Marketing Under 3 Months", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.marketingTime.from3To6Months", label: "Marketing 3 to 6 Months", type: "checkbox", page: 1, section: "neighborhood" },
+  { key: "neighborhood.marketingTime.over6Months", label: "Marketing Over 6 Months", type: "checkbox", page: 1, section: "neighborhood" },
+
+  { key: "neighborhood.priceRange", label: "Price Range", type: "text", page: 1, section: "neighborhood" },
+  { key: "neighborhood.ageRange", label: "Age Range", type: "text", page: 1, section: "neighborhood" },
+  { key: "neighborhood.oneUnitPercent", label: "One Unit Percent", type: "text", page: 1, section: "neighborhood" },
+  { key: "neighborhood.twoToFourUnitPercent", label: "2-4 Unit Percent", type: "text", page: 1, section: "neighborhood" },
+  { key: "neighborhood.multiFamilyPercent", label: "Multi Family Percent", type: "text", page: 1, section: "neighborhood" },
+  { key: "neighborhood.commercialPercent", label: "Commercial Percent", type: "text", page: 1, section: "neighborhood" },
+  { key: "neighborhood.otherPercent", label: "Other Percent", type: "text", page: 1, section: "neighborhood" },
+  { key: "neighborhood.boundaries", label: "Neighborhood Boundaries", type: "text", page: 1, section: "neighborhood" },
+  { key: "neighborhood.description", label: "Neighborhood Description", type: "multiline-overflow", page: 1, section: "neighborhood" },
+  { key: "neighborhood.marketConditions", label: "Market Conditions", type: "multiline-overflow", page: 1, section: "neighborhood" },
+
+  // Site
+  { key: "site.dimensions", label: "Dimensions", type: "text", page: 1, section: "site" },
+  { key: "site.area", label: "Area", type: "text", page: 1, section: "site" },
+  { key: "site.shape", label: "Shape", type: "text", page: 1, section: "site" },
+  { key: "site.view", label: "View", type: "text", page: 1, section: "site" },
+  { key: "site.zoningClassification", label: "Zoning Classification", type: "text", page: 1, section: "site" },
+  { key: "site.zoningDescription", label: "Zoning Description", type: "text", page: 1, section: "site" },
+
+  { key: "site.zoningCompliance.legal", label: "Zoning Legal", type: "checkbox", page: 1, section: "site" },
+  { key: "site.zoningCompliance.nonConforming", label: "Zoning Nonconforming", type: "checkbox", page: 1, section: "site" },
+  { key: "site.zoningCompliance.noZoning", label: "No Zoning", type: "checkbox", page: 1, section: "site" },
+  { key: "site.zoningCompliance.illegal", label: "Illegal Zoning", type: "checkbox", page: 1, section: "site" },
+
+  { key: "site.highestBestUse.yes", label: "Highest Best Use Yes", type: "checkbox", page: 1, section: "site" },
+  { key: "site.highestBestUse.no", label: "Highest Best Use No", type: "checkbox", page: 1, section: "site" },
+  { key: "site.highestBestUse.description", label: "Highest Best Use Description", type: "text", page: 1, section: "site" },
+
+  { key: "site.utilities.electricity.public", label: "Electricity Public", type: "checkbox", page: 1, section: "site" },
+  { key: "site.utilities.electricity.other", label: "Electricity Other", type: "checkbox", page: 1, section: "site" },
+  { key: "site.utilities.gas.public", label: "Gas Public", type: "checkbox", page: 1, section: "site" },
+  { key: "site.utilities.gas.other", label: "Gas Other", type: "checkbox", page: 1, section: "site" },
+  { key: "site.utilities.water.public", label: "Water Public", type: "checkbox", page: 1, section: "site" },
+  { key: "site.utilities.water.other", label: "Water Other", type: "checkbox", page: 1, section: "site" },
+  { key: "site.utilities.sanitarySewer.public", label: "Sewer Public", type: "checkbox", page: 1, section: "site" },
+  { key: "site.utilities.sanitarySewer.other", label: "Sewer Other", type: "checkbox", page: 1, section: "site" },
+  { key: "site.offsiteImprovements.street.public", label: "Street Public", type: "checkbox", page: 1, section: "site" },
+  { key: "site.offsiteImprovements.street.private", label: "Street Private", type: "checkbox", page: 1, section: "site" },
+  { key: "site.offsiteImprovements.alley.public", label: "Alley Public", type: "checkbox", page: 1, section: "site" },
+  { key: "site.offsiteImprovements.alley.private", label: "Alley Private", type: "checkbox", page: 1, section: "site" },
+
+  { key: "site.femaSpecialFloodHazardArea.yes", label: "Flood Hazard Yes", type: "checkbox", page: 1, section: "site" },
+  { key: "site.femaSpecialFloodHazardArea.no", label: "Flood Hazard No", type: "checkbox", page: 1, section: "site" },
+  { key: "site.femaFloodZone", label: "FEMA Flood Zone", type: "text", page: 1, section: "site" },
+  { key: "site.femaMapNumber", label: "FEMA Map Number", type: "text", page: 1, section: "site" },
+  { key: "site.femaMapDate", label: "FEMA Map Date", type: "date", page: 1, section: "site" },
+
+  { key: "site.utilitiesTypical.yes", label: "Utilities Typical Yes", type: "checkbox", page: 1, section: "site" },
+  { key: "site.utilitiesTypical.no", label: "Utilities Typical No", type: "checkbox", page: 1, section: "site" },
+  { key: "site.utilitiesTypical.description", label: "Utilities Typical Description", type: "text", page: 1, section: "site" },
+
+  { key: "site.adverseConditions.yes", label: "Adverse Conditions Yes", type: "checkbox", page: 1, section: "site" },
+  { key: "site.adverseConditions.no", label: "Adverse Conditions No", type: "checkbox", page: 1, section: "site" },
+  { key: "site.adverseConditions.description", label: "Adverse Conditions Description", type: "text", page: 1, section: "site" },
+
+  // Improvements - starter subset
+  { key: "improvements.general.units.one", label: "One Unit", type: "checkbox", page: 1, section: "improvements" },
+  { key: "improvements.general.units.accessory", label: "One with Accessory Unit", type: "checkbox", page: 1, section: "improvements" },
+  { key: "improvements.general.storyCount", label: "Stories", type: "text", page: 1, section: "improvements" },
+  { key: "improvements.general.designStyle", label: "Design Style", type: "text", page: 1, section: "improvements" },
+  { key: "improvements.general.yearBuilt", label: "Year Built", type: "text", page: 1, section: "improvements" },
+  { key: "improvements.general.effectiveAge", label: "Effective Age", type: "text", page: 1, section: "improvements" },
+  { key: "improvements.exterior.foundationWalls", label: "Foundation Walls", type: "text", page: 1, section: "improvements" },
+  { key: "improvements.exterior.roofSurface", label: "Roof Surface", type: "text", page: 1, section: "improvements" },
+  { key: "improvements.interior.floors", label: "Floors", type: "text", page: 1, section: "improvements" },
+  { key: "improvements.interior.walls", label: "Walls", type: "text", page: 1, section: "improvements" },
+  { key: "improvements.interior.trimFinish", label: "Trim Finish", type: "text", page: 1, section: "improvements" },
+  { key: "improvements.gla.rooms", label: "Rooms", type: "number", page: 1, section: "improvements" },
+  { key: "improvements.gla.bedrooms", label: "Bedrooms", type: "number", page: 1, section: "improvements" },
+  { key: "improvements.gla.baths", label: "Baths", type: "number", page: 1, section: "improvements" },
+  { key: "improvements.gla.aboveGradeSqFt", label: "Above Grade Sq Ft", type: "number", page: 1, section: "improvements" },
+  { key: "improvements.additionalFeatures", label: "Additional Features", type: "text", page: 1, section: "improvements" },
+  { key: "improvements.conditionDescription", label: "Condition Description", type: "multiline-overflow", page: 1, section: "improvements" },
+  { key: "improvements.physicalDeficiencies.yes", label: "Physical Deficiencies Yes", type: "checkbox", page: 1, section: "improvements" },
+  { key: "improvements.physicalDeficiencies.no", label: "Physical Deficiencies No", type: "checkbox", page: 1, section: "improvements" },
+  { key: "improvements.physicalDeficiencies.description", label: "Physical Deficiencies Description", type: "text", page: 1, section: "improvements" },
+  { key: "improvements.conformsToNeighborhood.yes", label: "Conforms Yes", type: "checkbox", page: 1, section: "improvements" },
+  { key: "improvements.conformsToNeighborhood.no", label: "Conforms No", type: "checkbox", page: 1, section: "improvements" },
+  { key: "improvements.conformsToNeighborhood.description", label: "Conforms Description", type: "text", page: 1, section: "improvements" },
+
+  // Page 2 - Sales / Reconciliation
+  { key: "sales.listings.count", label: "Comparable Listings Count", type: "number", page: 2, section: "sales" },
+  { key: "sales.listings.priceLow", label: "Comparable Listings Low", type: "currency", page: 2, section: "sales" },
+  { key: "sales.listings.priceHigh", label: "Comparable Listings High", type: "currency", page: 2, section: "sales" },
+
+  { key: "sales.sales.count", label: "Comparable Sales Count", type: "number", page: 2, section: "sales" },
+  { key: "sales.sales.priceLow", label: "Comparable Sales Low", type: "currency", page: 2, section: "sales" },
+  { key: "sales.sales.priceHigh", label: "Comparable Sales High", type: "currency", page: 2, section: "sales" },
+
+  { key: "sales.subject.address", label: "Subject Address", type: "text", page: 2, section: "sales" },
+  { key: "sales.subject.roomCount", label: "Subject Room Count", type: "text", page: 2, section: "sales" },
+  { key: "sales.subject.gla", label: "Subject GLA", type: "text", page: 2, section: "sales" },
+  { key: "sales.subject.basementFinishedRooms", label: "Subject Basement Rooms", type: "text", page: 2, section: "sales" },
+
+  ...[1,2,3].flatMap((n) => ([
+    { key: `sales.comp${n}.address`, label: `Comp ${n} Address`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.proximity`, label: `Comp ${n} Proximity`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.salePrice`, label: `Comp ${n} Sale Price`, type: "currency", page: 2, section: "sales" },
+    { key: `sales.comp${n}.salePricePerSqFt`, label: `Comp ${n} Sale Price Per SqFt`, type: "currency", page: 2, section: "sales" },
+    { key: `sales.comp${n}.dataSources`, label: `Comp ${n} Data Sources`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.verificationSources`, label: `Comp ${n} Verification Sources`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.location`, label: `Comp ${n} Location`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.site`, label: `Comp ${n} Site`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.view`, label: `Comp ${n} View`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.designStyle`, label: `Comp ${n} Design Style`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.condition`, label: `Comp ${n} Condition`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.gla`, label: `Comp ${n} GLA`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.bedrooms`, label: `Comp ${n} Bedrooms`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.baths`, label: `Comp ${n} Baths`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.heatingCooling`, label: `Comp ${n} Heating Cooling`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.garageCarport`, label: `Comp ${n} Garage Carport`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.porchPatioDeck`, label: `Comp ${n} Porch Patio Deck`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.netAdjustment`, label: `Comp ${n} Net Adjustment`, type: "currency", page: 2, section: "sales" },
+    { key: `sales.comp${n}.grossAdjustmentPercent`, label: `Comp ${n} Gross Adj Percent`, type: "text", page: 2, section: "sales" },
+    { key: `sales.comp${n}.adjustedSalePrice`, label: `Comp ${n} Adjusted Sale Price`, type: "currency", page: 2, section: "sales" },
+  ])),
+
+  { key: "sales.history.researched", label: "History Researched", type: "checkbox", page: 2, section: "sales" },
+  { key: "sales.history.notResearched", label: "History Not Researched", type: "checkbox", page: 2, section: "sales" },
+  { key: "sales.history.notResearchedExplanation", label: "History Not Researched Explanation", type: "text", page: 2, section: "sales" },
+
+  { key: "sales.priorSales.subjectDidReveal", label: "Subject Prior Sales Did Reveal", type: "checkbox", page: 2, section: "sales" },
+  { key: "sales.priorSales.subjectDidNotReveal", label: "Subject Prior Sales Did Not Reveal", type: "checkbox", page: 2, section: "sales" },
+  { key: "sales.priorSales.subjectDataSources", label: "Subject Prior Sales Data Sources", type: "text", page: 2, section: "sales" },
+
+  { key: "sales.priorSales.compDidReveal", label: "Comp Prior Sales Did Reveal", type: "checkbox", page: 2, section: "sales" },
+  { key: "sales.priorSales.compDidNotReveal", label: "Comp Prior Sales Did Not Reveal", type: "checkbox", page: 2, section: "sales" },
+  { key: "sales.priorSales.compDataSources", label: "Comp Prior Sales Data Sources", type: "text", page: 2, section: "sales" },
+
+  { key: "sales.priorSales.subject.date", label: "Subject Prior Sale Date", type: "date", page: 2, section: "sales" },
+  { key: "sales.priorSales.subject.price", label: "Subject Prior Sale Price", type: "currency", page: 2, section: "sales" },
+  { key: "sales.priorSales.subject.dataSources", label: "Subject Prior Sale Data Sources", type: "text", page: 2, section: "sales" },
+  { key: "sales.priorSales.subject.effectiveDate", label: "Subject Prior Sale Effective Date", type: "date", page: 2, section: "sales" },
+
+  { key: "sales.priorSales.comp1.date", label: "Comp1 Prior Sale Date", type: "date", page: 2, section: "sales" },
+  { key: "sales.priorSales.comp1.price", label: "Comp1 Prior Sale Price", type: "currency", page: 2, section: "sales" },
+  { key: "sales.priorSales.comp1.dataSources", label: "Comp1 Prior Data Sources", type: "text", page: 2, section: "sales" },
+  { key: "sales.priorSales.comp1.effectiveDate", label: "Comp1 Prior Effective Date", type: "date", page: 2, section: "sales" },
+
+  { key: "sales.priorSales.comp2.date", label: "Comp2 Prior Sale Date", type: "date", page: 2, section: "sales" },
+  { key: "sales.priorSales.comp2.price", label: "Comp2 Prior Sale Price", type: "currency", page: 2, section: "sales" },
+  { key: "sales.priorSales.comp2.dataSources", label: "Comp2 Prior Data Sources", type: "text", page: 2, section: "sales" },
+  { key: "sales.priorSales.comp2.effectiveDate", label: "Comp2 Prior Effective Date", type: "date", page: 2, section: "sales" },
+
+  { key: "sales.priorSales.comp3.date", label: "Comp3 Prior Sale Date", type: "date", page: 2, section: "sales" },
+  { key: "sales.priorSales.comp3.price", label: "Comp3 Prior Sale Price", type: "currency", page: 2, section: "sales" },
+  { key: "sales.priorSales.comp3.dataSources", label: "Comp3 Prior Data Sources", type: "text", page: 2, section: "sales" },
+  { key: "sales.priorSales.comp3.effectiveDate", label: "Comp3 Prior Effective Date", type: "date", page: 2, section: "sales" },
+
+  { key: "sales.priorSales.analysis", label: "Prior Sales Analysis", type: "multiline-overflow", page: 2, section: "sales" },
+  { key: "sales.summary", label: "Sales Comparison Summary", type: "multiline-overflow", page: 2, section: "sales" },
+  { key: "sales.indicatedValue", label: "Indicated Value by Sales Comparison", type: "currency", page: 2, section: "sales" },
+
+  { key: "reconciliation.indicatedValue.salesComparison", label: "Reconciliation Sales Comparison", type: "currency", page: 2, section: "reconciliation" },
+  { key: "reconciliation.indicatedValue.costApproach", label: "Reconciliation Cost Approach", type: "currency", page: 2, section: "reconciliation" },
+  { key: "reconciliation.indicatedValue.incomeApproach", label: "Reconciliation Income Approach", type: "currency", page: 2, section: "reconciliation" },
+
+  { key: "reconciliation.asIs", label: "As Is", type: "checkbox", page: 2, section: "reconciliation" },
+  { key: "reconciliation.subjectToCompletion", label: "Subject To Completion", type: "checkbox", page: 2, section: "reconciliation" },
+  { key: "reconciliation.subjectToRepairs", label: "Subject To Repairs", type: "checkbox", page: 2, section: "reconciliation" },
+  { key: "reconciliation.subjectToInspection", label: "Subject To Inspection", type: "checkbox", page: 2, section: "reconciliation" },
+  { key: "reconciliation.statement", label: "Reconciliation Statement", type: "text", page: 2, section: "reconciliation" },
+  { key: "reconciliation.marketValue", label: "Final Market Value", type: "currency", page: 2, section: "reconciliation" },
+  { key: "reconciliation.effectiveDate", label: "Effective Date", type: "date", page: 2, section: "reconciliation" },
+
+  // Page 3
+  { key: "additionalComments.body", label: "Additional Comments", type: "multiline-overflow", page: 3, section: "additionalComments" },
+  { key: "costApproach.siteValueSupport", label: "Site Value Support", type: "multiline-overflow", page: 3, section: "costApproach" },
+  { key: "costApproach.estimatedType.reproduction", label: "Reproduction", type: "checkbox", page: 3, section: "costApproach" },
+  { key: "costApproach.estimatedType.replacement", label: "Replacement", type: "checkbox", page: 3, section: "costApproach" },
+  { key: "costApproach.opinionOfSiteValue", label: "Opinion of Site Value", type: "currency", page: 3, section: "costApproach" },
+  { key: "costApproach.sourceOfCostData", label: "Source of Cost Data", type: "text", page: 3, section: "costApproach" },
+  { key: "costApproach.qualityRating", label: "Quality Rating", type: "text", page: 3, section: "costApproach" },
+  { key: "costApproach.effectiveDate", label: "Cost Data Effective Date", type: "date", page: 3, section: "costApproach" },
+  { key: "costApproach.comments", label: "Cost Approach Comments", type: "multiline-overflow", page: 3, section: "costApproach" },
+  { key: "costApproach.totalEstimateOfCostNew", label: "Total Estimate of Cost New", type: "currency", page: 3, section: "costApproach" },
+  { key: "costApproach.depreciatedCostOfImprovements", label: "Depreciated Cost of Improvements", type: "currency", page: 3, section: "costApproach" },
+  { key: "costApproach.indicatedValue", label: "Indicated Value by Cost Approach", type: "currency", page: 3, section: "costApproach" },
+
+  { key: "income.monthlyMarketRent", label: "Monthly Market Rent", type: "currency", page: 3, section: "income" },
+  { key: "income.grossRentMultiplier", label: "Gross Rent Multiplier", type: "text", page: 3, section: "income" },
+  { key: "income.indicatedValue", label: "Indicated Value by Income", type: "currency", page: 3, section: "income" },
+  { key: "income.summary", label: "Income Summary", type: "multiline-overflow", page: 3, section: "income" },
+
+  { key: "pud.hoaControlled.yes", label: "HOA Controlled Yes", type: "checkbox", page: 3, section: "pud" },
+  { key: "pud.hoaControlled.no", label: "HOA Controlled No", type: "checkbox", page: 3, section: "pud" },
+  { key: "pud.unitType.detached", label: "PUD Detached", type: "checkbox", page: 3, section: "pud" },
+  { key: "pud.unitType.attached", label: "PUD Attached", type: "checkbox", page: 3, section: "pud" },
+  { key: "pud.legalName", label: "PUD Legal Name", type: "text", page: 3, section: "pud" },
+  { key: "pud.totalPhases", label: "PUD Total Phases", type: "number", page: 3, section: "pud" },
+  { key: "pud.totalUnits", label: "PUD Total Units", type: "number", page: 3, section: "pud" },
+  { key: "pud.totalUnitsSold", label: "PUD Total Units Sold", type: "number", page: 3, section: "pud" },
+  { key: "pud.totalUnitsRented", label: "PUD Total Units Rented", type: "number", page: 3, section: "pud" },
+  { key: "pud.totalUnitsForSale", label: "PUD Total Units For Sale", type: "number", page: 3, section: "pud" },
+  { key: "pud.dataSources", label: "PUD Data Sources", type: "text", page: 3, section: "pud" },
+  { key: "pud.commonElementsDescription", label: "PUD Common Elements", type: "multiline-overflow", page: 3, section: "pud" },
+
+  // Page 6
+  { key: "appraiser.signatureImage", label: "Appraiser Signature", type: "signature", page: 6, section: "appraiser" },
+  { key: "appraiser.name", label: "Appraiser Name", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.companyName", label: "Appraiser Company Name", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.companyAddress", label: "Appraiser Company Address", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.telephoneNumber", label: "Appraiser Telephone", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.emailAddress", label: "Appraiser Email", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.signatureReportDate", label: "Appraiser Signature Date", type: "date", page: 6, section: "appraiser" },
+  { key: "appraiser.effectiveDate", label: "Appraiser Effective Date", type: "date", page: 6, section: "appraiser" },
+  { key: "appraiser.stateCertificationNumber", label: "Appraiser Certification Number", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.stateLicenseNumber", label: "Appraiser License Number", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.otherCredentialDescription", label: "Appraiser Other Credential", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.otherCredentialStateNumber", label: "Appraiser Other State Number", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.state", label: "Appraiser State", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.licenseExpirationDate", label: "License Expiration", type: "date", page: 6, section: "appraiser" },
+  { key: "appraiser.propertyAddress", label: "Address of Property Appraised", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.appraisedValue", label: "Appraised Value", type: "currency", page: 6, section: "appraiser" },
+  { key: "appraiser.lenderClientName", label: "Lender Client Name", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.lenderClientCompanyName", label: "Lender Client Company", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.lenderClientCompanyAddress", label: "Lender Client Address", type: "text", page: 6, section: "appraiser" },
+  { key: "appraiser.lenderClientEmailAddress", label: "Lender Client Email", type: "text", page: 6, section: "appraiser" },
+
+  { key: "supervisory.signatureImage", label: "Supervisory Signature", type: "signature", page: 6, section: "supervisory" },
+  { key: "supervisory.name", label: "Supervisory Name", type: "text", page: 6, section: "supervisory" },
+  { key: "supervisory.companyName", label: "Supervisory Company", type: "text", page: 6, section: "supervisory" },
+
+  { key: "inspection.subject.didNotInspect", label: "Did Not Inspect Subject", type: "checkbox", page: 6, section: "inspection" },
+  { key: "inspection.subject.streetOnly", label: "Inspect Exterior Only", type: "checkbox", page: 6, section: "inspection" },
+  { key: "inspection.subject.interiorExterior", label: "Inspect Interior and Exterior", type: "checkbox", page: 6, section: "inspection" },
+  { key: "inspection.subject.date", label: "Subject Inspection Date", type: "date", page: 6, section: "inspection" },
+  { key: "inspection.comparable.didNotInspect", label: "Did Not Inspect Comparable", type: "checkbox", page: 6, section: "inspection" },
+  { key: "inspection.comparable.streetOnly", label: "Did Inspect Comparable from Street", type: "checkbox", page: 6, section: "inspection" },
+  { key: "inspection.comparable.date", label: "Comparable Inspection Date", type: "date", page: 6, section: "inspection" },
+];

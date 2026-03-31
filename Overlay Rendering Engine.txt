@@ -1,0 +1,117 @@
+// src/lib/pdf/render-urar-overlay.ts
+
+import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
+import { urarOverlayMap } from "@/lib/templates/urar-overlay-map";
+import { urarFields } from "@/lib/templates/urar-fields";
+import { checkboxMark, formatOverlayValue, shouldRenderCheckbox, fitMultilineText } from "@/lib/pdf/render-helpers";
+
+export interface RenderResult {
+  pdfBytes: Uint8Array;
+  addendumOverflow: Array<{ key: string; label: string; text: string }>;
+}
+
+export async function renderUrarOverlay(params: {
+  templateBytes: Uint8Array;
+  values: Record<string, unknown>;
+  signaturePngBytes?: Uint8Array;
+}): Promise<RenderResult> {
+  const pdfDoc = await PDFDocument.load(params.templateBytes);
+  const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  const bold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+
+  const overflowItems: Array<{ key: string; label: string; text: string }> = [];
+
+  for (const field of urarOverlayMap) {
+    const page = pdfDoc.getPage(field.page - 1);
+    const pageHeight = page.getHeight();
+    const rawValue = params.values[field.key];
+
+    if (field.type === "checkbox") {
+      if (shouldRenderCheckbox(rawValue)) {
+        page.drawText(checkboxMark(), {
+          x: field.x,
+          y: pageHeight - field.y,
+          size: field.fontSize,
+          font: bold,
+          color: rgb(0, 0, 0),
+        });
+      }
+      continue;
+    }
+
+    if (field.type === "signature") {
+      if (!params.signaturePngBytes) continue;
+      const png = await pdfDoc.embedPng(params.signaturePngBytes);
+      page.drawImage(png, {
+        x: field.x,
+        y: pageHeight - field.y - field.height!,
+        width: field.width!,
+        height: field.height!,
+      });
+      continue;
+    }
+
+    const fieldDef = urarFields.find((f) => f.key === field.key);
+    const text = formatOverlayValue(
+      rawValue,
+      fieldDef?.type === "currency"
+        ? "currency"
+        : fieldDef?.type === "date"
+        ? "date"
+        : fieldDef?.type === "number"
+        ? "number"
+        : "text"
+    );
+
+    if (!text) continue;
+
+    if (field.type === "text") {
+      page.drawText(text, {
+        x: field.x,
+        y: pageHeight - field.y,
+        size: field.fontSize,
+        font,
+        color: rgb(0, 0, 0),
+        maxWidth: field.width,
+      });
+      continue;
+    }
+
+    if (field.type === "multiline") {
+      const fitted = fitMultilineText({
+        text,
+        width: field.width ?? 100,
+        height: field.height ?? 20,
+        fontSize: field.fontSize,
+        minFontSize: field.minFontSize ?? 6,
+        lineHeight: field.lineHeight ?? field.fontSize + 1,
+        maxLines: field.maxLines,
+      });
+
+      const lines = fitted.fittedText.split("\n");
+      lines.forEach((line, i) => {
+        page.drawText(line, {
+          x: field.x,
+          y: pageHeight - field.y - i * (field.lineHeight ?? field.fontSize + 1),
+          size: fitted.fontSize,
+          font,
+          color: rgb(0, 0, 0),
+          maxWidth: field.width,
+        });
+      });
+
+      if (fitted.overflowText) {
+        overflowItems.push({
+          key: field.key,
+          label: fieldDef?.label ?? field.key,
+          text: fitted.overflowText,
+        });
+      }
+    }
+  }
+
+  return {
+    pdfBytes: await pdfDoc.save(),
+    addendumOverflow: overflowItems,
+  };
+}

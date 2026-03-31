@@ -1,0 +1,12 @@
+export interface JobRecord {
+  id: string;
+  templateId: string;
+  fileNumber?: string;
+  clientName: string;
+  propertyAddress: string;
+  effectiveDate: string;
+  status: "draft" | "ready_to_sync" | "synced" | "sent" | "archived";
+  syncStatus: "local_only" | "pending_sync" | "syncing" | "synced" | "error";
+  createdAt: string;
+  updatedAt: string;
+}

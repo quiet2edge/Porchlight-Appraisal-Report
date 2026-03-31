@@ -1,0 +1,169 @@
+// src/lib/templates/urar-overlay-map.ts
+
+import { OverlayField } from "@/lib/pdf/overlay-schema";
+
+export const urarOverlayMap: OverlayField[] = [
+  // PAGE 1
+  { key: "subject.fileNumber", page: 1, type: "text", x: 520, y: 27, width: 45, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.propertyAddress", page: 1, type: "text", x: 22, y: 52, width: 170, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.city", page: 1, type: "text", x: 315, y: 52, width: 70, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.state", page: 1, type: "text", x: 448, y: 52, width: 28, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.zip", page: 1, type: "text", x: 540, y: 52, width: 42, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "subject.borrower", page: 1, type: "text", x: 22, y: 68, width: 165, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.ownerOfRecord", page: 1, type: "text", x: 258, y: 68, width: 145, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.county", page: 1, type: "text", x: 503, y: 68, width: 82, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "subject.legalDescription", page: 1, type: "multiline", x: 22, y: 84, width: 560, height: 22, fontSize: 7, minFontSize: 6, maxLines: 2, overflow: "truncate", lineHeight: 8 },
+  { key: "subject.assessorsParcelNumber", page: 1, type: "text", x: 82, y: 100, width: 120, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.taxYear", page: 1, type: "text", x: 340, y: 100, width: 52, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.reTaxes", page: 1, type: "text", x: 500, y: 100, width: 74, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "subject.neighborhoodName", page: 1, type: "text", x: 78, y: 116, width: 145, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.mapReference", page: 1, type: "text", x: 315, y: 116, width: 90, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.censusTract", page: 1, type: "text", x: 511, y: 116, width: 71, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "subject.occupancy.owner", page: 1, type: "checkbox", x: 86, y: 132, fontSize: 10, checkedStyle: "x" },
+  { key: "subject.occupancy.tenant", page: 1, type: "checkbox", x: 133, y: 132, fontSize: 10, checkedStyle: "x" },
+  { key: "subject.occupancy.vacant", page: 1, type: "checkbox", x: 182, y: 132, fontSize: 10, checkedStyle: "x" },
+  { key: "subject.pud", page: 1, type: "checkbox", x: 457, y: 132, fontSize: 10, checkedStyle: "x" },
+  { key: "subject.hoaAmount", page: 1, type: "text", x: 505, y: 132, width: 38, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.hoaPeriod.year", page: 1, type: "checkbox", x: 548, y: 132, fontSize: 10, checkedStyle: "x" },
+  { key: "subject.hoaPeriod.month", page: 1, type: "checkbox", x: 585, y: 132, fontSize: 10, checkedStyle: "x" },
+
+  { key: "subject.lenderClient", page: 1, type: "text", x: 22, y: 165, width: 170, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "subject.lenderClientAddress", page: 1, type: "text", x: 255, y: 165, width: 327, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "subject.offeredForSale.yes", page: 1, type: "checkbox", x: 528, y: 181, fontSize: 10, checkedStyle: "x" },
+  { key: "subject.offeredForSale.no", page: 1, type: "checkbox", x: 561, y: 181, fontSize: 10, checkedStyle: "x" },
+  { key: "subject.reportDataSources", page: 1, type: "multiline", x: 22, y: 197, width: 560, height: 15, fontSize: 7, minFontSize: 6, maxLines: 2, overflow: "truncate", lineHeight: 7 },
+
+  { key: "contract.analyzed", page: 1, type: "checkbox", x: 26, y: 224, fontSize: 10, checkedStyle: "x" },
+  { key: "contract.notAnalyzed", page: 1, type: "checkbox", x: 63, y: 224, fontSize: 10, checkedStyle: "x" },
+  { key: "contract.analysisExplanation", page: 1, type: "multiline", x: 22, y: 236, width: 560, height: 18, fontSize: 7, minFontSize: 6, maxLines: 2, overflow: "truncate", lineHeight: 7 },
+  { key: "contract.price", page: 1, type: "text", x: 96, y: 252, width: 52, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "contract.date", page: 1, type: "text", x: 208, y: 252, width: 65, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "contract.sellerIsOwner.yes", page: 1, type: "checkbox", x: 430, y: 252, fontSize: 10, checkedStyle: "x" },
+  { key: "contract.sellerIsOwner.no", page: 1, type: "checkbox", x: 461, y: 252, fontSize: 10, checkedStyle: "x" },
+  { key: "contract.dataSources", page: 1, type: "text", x: 520, y: 252, width: 62, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "neighborhood.description", page: 1, type: "multiline", x: 23, y: 366, width: 560, height: 32, fontSize: 8, minFontSize: 6, maxLines: 4, overflow: "addendum", lineHeight: 8 },
+  { key: "neighborhood.marketConditions", page: 1, type: "multiline", x: 23, y: 402, width: 560, height: 34, fontSize: 8, minFontSize: 6, maxLines: 4, overflow: "addendum", lineHeight: 8 },
+
+  { key: "site.dimensions", page: 1, type: "text", x: 28, y: 448, width: 84, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "site.area", page: 1, type: "text", x: 166, y: 448, width: 85, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "site.shape", page: 1, type: "text", x: 294, y: 448, width: 85, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "site.view", page: 1, type: "text", x: 444, y: 448, width: 117, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "site.femaMapNumber", page: 1, type: "text", x: 371, y: 529, width: 74, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "site.femaMapDate", page: 1, type: "text", x: 507, y: 529, width: 72, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "improvements.general.yearBuilt", page: 1, type: "text", x: 28, y: 633, width: 77, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "improvements.general.effectiveAge", page: 1, type: "text", x: 28, y: 649, width: 74, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "improvements.exterior.foundationWalls", page: 1, type: "text", x: 325, y: 585, width: 112, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "improvements.exterior.roofSurface", page: 1, type: "text", x: 325, y: 617, width: 112, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "improvements.interior.floors", page: 1, type: "text", x: 456, y: 585, width: 117, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "improvements.interior.walls", page: 1, type: "text", x: 456, y: 601, width: 117, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "improvements.interior.trimFinish", page: 1, type: "text", x: 456, y: 617, width: 117, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "improvements.gla.rooms", page: 1, type: "text", x: 221, y: 761, width: 52, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "improvements.gla.bedrooms", page: 1, type: "text", x: 317, y: 761, width: 52, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "improvements.gla.baths", page: 1, type: "text", x: 413, y: 761, width: 52, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "improvements.gla.aboveGradeSqFt", page: 1, type: "text", x: 482, y: 761, width: 95, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "improvements.additionalFeatures", page: 1, type: "text", x: 23, y: 777, width: 560, height: 12, fontSize: 8, minFontSize: 6 },
+  { key: "improvements.conditionDescription", page: 1, type: "multiline", x: 23, y: 793, width: 560, height: 48, fontSize: 8, minFontSize: 6, maxLines: 6, overflow: "addendum", lineHeight: 8 },
+  { key: "improvements.physicalDeficiencies.yes", page: 1, type: "checkbox", x: 461, y: 858, fontSize: 10, checkedStyle: "x" },
+  { key: "improvements.physicalDeficiencies.no", page: 1, type: "checkbox", x: 491, y: 858, fontSize: 10, checkedStyle: "x" },
+  { key: "improvements.physicalDeficiencies.description", page: 1, type: "text", x: 537, y: 858, width: 45, height: 10, fontSize: 7, minFontSize: 6 },
+  { key: "improvements.conformsToNeighborhood.yes", page: 1, type: "checkbox", x: 475, y: 889, fontSize: 10, checkedStyle: "x" },
+  { key: "improvements.conformsToNeighborhood.no", page: 1, type: "checkbox", x: 505, y: 889, fontSize: 10, checkedStyle: "x" },
+
+  // PAGE 2
+  { key: "sales.subject.address", page: 2, type: "text", x: 22, y: 74, width: 120, height: 10, fontSize: 7, minFontSize: 6 },
+  { key: "sales.comp1.address", page: 2, type: "text", x: 167, y: 74, width: 113, height: 10, fontSize: 7, minFontSize: 6 },
+  { key: "sales.comp2.address", page: 2, type: "text", x: 293, y: 74, width: 113, height: 10, fontSize: 7, minFontSize: 6 },
+  { key: "sales.comp3.address", page: 2, type: "text", x: 425, y: 74, width: 113, height: 10, fontSize: 7, minFontSize: 6 },
+
+  { key: "sales.comp1.salePrice", page: 2, type: "text", x: 180, y: 107, width: 60, height: 10, fontSize: 7, minFontSize: 6 },
+  { key: "sales.comp2.salePrice", page: 2, type: "text", x: 309, y: 107, width: 60, height: 10, fontSize: 7, minFontSize: 6 },
+  { key: "sales.comp3.salePrice", page: 2, type: "text", x: 440, y: 107, width: 60, height: 10, fontSize: 7, minFontSize: 6 },
+
+  { key: "sales.priorSales.analysis", page: 2, type: "multiline", x: 22, y: 587, width: 560, height: 62, fontSize: 8, minFontSize: 6, maxLines: 8, overflow: "addendum", lineHeight: 8 },
+  { key: "sales.summary", page: 2, type: "multiline", x: 22, y: 671, width: 560, height: 72, fontSize: 8, minFontSize: 6, maxLines: 9, overflow: "addendum", lineHeight: 8 },
+  { key: "sales.indicatedValue", page: 2, type: "text", x: 208, y: 762, width: 78, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "reconciliation.indicatedValue.salesComparison", page: 2, type: "text", x: 172, y: 779, width: 58, height: 10, fontSize: 7, minFontSize: 6 },
+  { key: "reconciliation.indicatedValue.costApproach", page: 2, type: "text", x: 342, y: 779, width: 58, height: 10, fontSize: 7, minFontSize: 6 },
+  { key: "reconciliation.indicatedValue.incomeApproach", page: 2, type: "text", x: 517, y: 779, width: 58, height: 10, fontSize: 7, minFontSize: 6 },
+
+  { key: "reconciliation.asIs", page: 2, type: "checkbox", x: 112, y: 806, fontSize: 10, checkedStyle: "x" },
+  { key: "reconciliation.subjectToCompletion", page: 2, type: "checkbox", x: 177, y: 806, fontSize: 10, checkedStyle: "x" },
+  { key: "reconciliation.subjectToRepairs", page: 2, type: "checkbox", x: 328, y: 822, fontSize: 10, checkedStyle: "x" },
+  { key: "reconciliation.subjectToInspection", page: 2, type: "checkbox", x: 513, y: 822, fontSize: 10, checkedStyle: "x" },
+
+  { key: "reconciliation.marketValue", page: 2, type: "text", x: 50, y: 859, width: 95, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "reconciliation.effectiveDate", page: 2, type: "text", x: 198, y: 859, width: 60, height: 10, fontSize: 8, minFontSize: 6 },
+
+  // PAGE 3
+  { key: "additionalComments.body", page: 3, type: "multiline", x: 20, y: 36, width: 566, height: 472, fontSize: 8, minFontSize: 6, maxLines: 34, overflow: "addendum", lineHeight: 13 },
+
+  { key: "costApproach.siteValueSupport", page: 3, type: "multiline", x: 20, y: 536, width: 566, height: 24, fontSize: 7, minFontSize: 6, maxLines: 2, overflow: "addendum", lineHeight: 8 },
+  { key: "costApproach.estimatedType.reproduction", page: 3, type: "checkbox", x: 80, y: 578, fontSize: 10, checkedStyle: "x" },
+  { key: "costApproach.estimatedType.replacement", page: 3, type: "checkbox", x: 174, y: 578, fontSize: 10, checkedStyle: "x" },
+  { key: "costApproach.opinionOfSiteValue", page: 3, type: "text", x: 509, y: 578, width: 65, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "costApproach.sourceOfCostData", page: 3, type: "text", x: 74, y: 594, width: 122, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "costApproach.qualityRating", page: 3, type: "text", x: 100, y: 610, width: 72, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "costApproach.effectiveDate", page: 3, type: "text", x: 249, y: 610, width: 60, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "costApproach.comments", page: 3, type: "multiline", x: 20, y: 626, width: 278, height: 40, fontSize: 7, minFontSize: 6, maxLines: 4, overflow: "addendum", lineHeight: 8 },
+  { key: "costApproach.totalEstimateOfCostNew", page: 3, type: "text", x: 509, y: 658, width: 65, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "costApproach.depreciatedCostOfImprovements", page: 3, type: "text", x: 509, y: 706, width: 65, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "costApproach.indicatedValue", page: 3, type: "text", x: 509, y: 736, width: 65, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "income.monthlyMarketRent", page: 3, type: "text", x: 125, y: 772, width: 45, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "income.grossRentMultiplier", page: 3, type: "text", x: 263, y: 772, width: 42, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "income.indicatedValue", page: 3, type: "text", x: 509, y: 772, width: 65, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "income.summary", page: 3, type: "multiline", x: 20, y: 788, width: 566, height: 24, fontSize: 7, minFontSize: 6, maxLines: 2, overflow: "addendum", lineHeight: 8 },
+
+  { key: "pud.hoaControlled.yes", page: 3, type: "checkbox", x: 239, y: 831, fontSize: 10, checkedStyle: "x" },
+  { key: "pud.hoaControlled.no", page: 3, type: "checkbox", x: 272, y: 831, fontSize: 10, checkedStyle: "x" },
+  { key: "pud.unitType.detached", page: 3, type: "checkbox", x: 349, y: 831, fontSize: 10, checkedStyle: "x" },
+  { key: "pud.unitType.attached", page: 3, type: "checkbox", x: 418, y: 831, fontSize: 10, checkedStyle: "x" },
+
+  { key: "pud.legalName", page: 3, type: "text", x: 94, y: 863, width: 136, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "pud.totalPhases", page: 3, type: "text", x: 89, y: 879, width: 48, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "pud.totalUnits", page: 3, type: "text", x: 240, y: 879, width: 45, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "pud.totalUnitsSold", page: 3, type: "text", x: 425, y: 879, width: 52, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "pud.totalUnitsRented", page: 3, type: "text", x: 111, y: 895, width: 45, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "pud.totalUnitsForSale", page: 3, type: "text", x: 301, y: 895, width: 48, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "pud.dataSources", page: 3, type: "text", x: 427, y: 895, width: 56, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "pud.commonElementsDescription", page: 3, type: "multiline", x: 20, y: 972, width: 566, height: 26, fontSize: 7, minFontSize: 6, maxLines: 2, overflow: "addendum", lineHeight: 8 },
+
+  // PAGE 6
+  { key: "appraiser.signatureImage", page: 6, type: "signature", x: 77, y: 516, width: 112, height: 22, preserveAspectRatio: true },
+  { key: "appraiser.name", page: 6, type: "text", x: 62, y: 532, width: 140, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "appraiser.companyName", page: 6, type: "text", x: 95, y: 548, width: 107, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "appraiser.companyAddress", page: 6, type: "text", x: 98, y: 564, width: 104, height: 18, fontSize: 7, minFontSize: 6, maxLines: 2, overflow: "truncate", lineHeight: 8 },
+  { key: "appraiser.telephoneNumber", page: 6, type: "text", x: 115, y: 596, width: 87, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "appraiser.emailAddress", page: 6, type: "text", x: 92, y: 612, width: 110, height: 10, fontSize: 7, minFontSize: 6 },
+  { key: "appraiser.signatureReportDate", page: 6, type: "text", x: 141, y: 628, width: 61, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "appraiser.effectiveDate", page: 6, type: "text", x: 129, y: 644, width: 73, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "appraiser.stateCertificationNumber", page: 6, type: "text", x: 126, y: 660, width: 76, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "appraiser.stateLicenseNumber", page: 6, type: "text", x: 107, y: 676, width: 95, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "appraiser.otherCredentialDescription", page: 6, type: "text", x: 110, y: 692, width: 55, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "appraiser.otherCredentialStateNumber", page: 6, type: "text", x: 186, y: 692, width: 16, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "appraiser.state", page: 6, type: "text", x: 58, y: 708, width: 144, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "appraiser.licenseExpirationDate", page: 6, type: "text", x: 164, y: 724, width: 38, height: 10, fontSize: 8, minFontSize: 6 },
+  { key: "appraiser.propertyAddress", page: 6, type: "multiline", x: 24, y: 748, width: 178, height: 22, fontSize: 7, minFontSize: 6, maxLines: 2, overflow: "truncate", lineHeight: 8 },
+  { key: "appraiser.appraisedValue", page: 6, type: "text", x: 145, y: 781, width: 57, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "inspection.subject.didNotInspect", page: 6, type: "checkbox", x: 344, y: 747, fontSize: 10, checkedStyle: "x" },
+  { key: "inspection.subject.streetOnly", page: 6, type: "checkbox", x: 344, y: 763, fontSize: 10, checkedStyle: "x" },
+  { key: "inspection.subject.interiorExterior", page: 6, type: "checkbox", x: 344, y: 795, fontSize: 10, checkedStyle: "x" },
+  { key: "inspection.subject.date", page: 6, type: "text", x: 450, y: 811, width: 66, height: 10, fontSize: 8, minFontSize: 6 },
+
+  { key: "inspection.comparable.didNotInspect", page: 6, type: "checkbox", x: 344, y: 843, fontSize: 10, checkedStyle: "x" },
+  { key: "inspection.comparable.streetOnly", page: 6, type: "checkbox", x: 344, y: 859, fontSize: 10, checkedStyle: "x" },
+  { key: "inspection.comparable.date", page: 6, type: "text", x: 456, y: 875, width: 60, height: 10, fontSize: 8, minFontSize: 6 },
+];

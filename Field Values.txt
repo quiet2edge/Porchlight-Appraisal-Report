@@ -1,0 +1,7 @@
+export interface JobFieldValue {
+  id: string;
+  jobId: string;
+  fieldKey: string;
+  value: string | number | boolean | null;
+  updatedAt: string;
+}

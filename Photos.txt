@@ -1,0 +1,12 @@
+export interface JobPhoto {
+  id: string;
+  jobId: string;
+  blobId: string;
+  filename: string;
+  mimeType: string;
+  caption: string;
+  order: number;
+  category?: string | null;
+  createdAt: string;
+  syncedAt?: string | null;
+}

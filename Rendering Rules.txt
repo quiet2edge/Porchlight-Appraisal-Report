@@ -1,0 +1,21 @@
+// src/lib/pdf/urar-render-rules.ts
+
+export interface UrarRenderRules {
+  defaultFontSize: number;
+  defaultMinFontSize: number;
+  checkboxStyle: "x";
+  currencyPrefix: string;
+  dateFormat: "MM/DD/YYYY" | "M/D/YYYY" | "raw";
+  multilineOverflowMode: "addendum";
+  signatureMode: "image";
+}
+
+export const urarRenderRules: UrarRenderRules = {
+  defaultFontSize: 8,
+  defaultMinFontSize: 6,
+  checkboxStyle: "x",
+  currencyPrefix: "$",
+  dateFormat: "M/D/YYYY",
+  multilineOverflowMode: "addendum",
+  signatureMode: "image",
+};

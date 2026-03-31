@@ -1,0 +1,25 @@
+{
+  "templateId": "urar_1004_2005",
+  "pdfPath": "/templates/urar-sample-form.pdf",
+  "fields": [
+    {
+      "key": "subject.property_address",
+      "pdfFieldName": "PropertyAddress",
+      "type": "text"
+    },
+    {
+      "key": "subject.currently_offered_for_sale_yes",
+      "pdfFieldName": "CurrentlyOfferedYes",
+      "type": "checkbox"
+    },
+    {
+      "key": "appraiser.signature",
+      "pdfFieldName": "AppraiserSignature",
+      "type": "signature"
+    }
+  ],
+  "photoAddendum": {
+    "enabled": true,
+    "photosPerPage": 2
+  }
+}
